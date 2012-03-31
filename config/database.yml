@@ -1,0 +1,5 @@
+#this is now empty and will not be used
+#we could also use this file if we wanted to 
+#specify where we would like to periodically dump mongo
+#data to say mysql flat tables for the
+#reporting and analysts mining data
