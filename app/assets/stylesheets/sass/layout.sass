@@ -1,0 +1,256 @@
+@import _mixins
+@import _reset
+
+html
+  :margin 0
+  :padding 0
+  
+  #abslogo
+    :position absolute
+    :width 100px
+    :height 69px
+    :background transparent url("/assets/logo.png") no-repeat
+    :top 8px
+    :left 0px
+    :z-index -1
+
+  #abslogo1
+    :position absolute
+    :width 98px
+    :height 61px
+    :background transparent url("/assets/logo1.png") no-repeat
+    :top 0px
+    :right 0px
+    :z-index -1
+
+  body
+    :font 9pt Helvetica, Arial, Tahoma, sans-serif
+    :background #E8E8DD url("/assets/bg-body.gif") repeat-x scroll
+    :margin 0
+    :padding 0
+    :color #3A4043
+    :text-align center
+    
+    div.spinner_popup
+      :width 150px
+      :height 150px
+      :border-radius 10px
+      :position absolute
+      :opacity 0.7
+      :background #000 url("/assets/ajax-loader.gif") no-repeat center center
+    
+    a
+      :color #6D7679
+      :text-decoration none
+      :font-weight bold
+      &:hover
+        :text-decoration underline
+    
+    #container
+      :width 98%
+      :margin 0 auto
+      :text-align left
+      
+      #header
+        :height 140px
+        
+        #top
+          :height 62px
+          :padding-top 15px
+          :overflow hidden
+          
+          #logo
+            :margin-top 10px
+            :color #FFF
+            :float left
+            :font-size 2.5em
+            :font-weight bold
+            :letter-spacing -1px
+            :text-transform uppercase
+            :width 400px
+            :margin-left 100px
+            
+          #user_info
+            :color #fff
+            :position absolute
+            :top 50px
+            :right 100px
+                          
+        ul#menu
+          :padding 0
+          :margin 0
+          :list-style none
+          :overflow visible
+          
+          > li
+            :float left
+            :height 40px
+            :overflow hidden
+            :cursor pointer
+            
+            &:hover
+              :background-color #60686B
+                
+              :overflow visible
+
+            ul.sub
+              :display none
+              :position absolute
+              :background #fff
+              :box-shadow rgba(0, 0, 0, 0.3) 10px 10px 10px
+              :-moz-box-shadow rgba(0, 0, 0, 0.3) 10px 10px 10px
+              :-webkit-box-shadow rgba(0, 0, 0, 0.3) 10px 10px 10px
+
+              li
+                :text-align left
+                :float none
+                :padding 0
+                :margin 0
+                
+                a
+                  :padding 10px 10px
+                  :margin 0
+                  :color #6C7275
+                  :display block
+                  
+                  &:hover
+                    :background-color #eee
+                    :text-decoration none
+                    
+                  &.active
+                    :background-color #ddd
+                  
+            > span, > a
+              :display inline-block
+              :padding 0 16px
+              :height 40px
+              :line-height 3.4em
+              :color #E0E0E0
+              :text-transform uppercase
+              :text-decoration none
+              :font-weight bold
+              
+              &.has_sub_menu
+                :margin-right 14px
+                :background transparent url("/assets/menu_arrow_down.png") no-repeat right
+              
+              &.menu_active
+                :background transparent url("/assets/menu_arrow_up.png") no-repeat right
+            
+            &.active  
+              :background-color #6C7275
+              :color #FFF
+              :overflow visible
+      
+      #content
+        :padding-top 10px
+        :overflow hidden
+        h1
+          :color #373D40
+          :font-size 200%
+          :font-weight bold
+          :margin 15px 12px 0 0 
+          :display block          
+          :border-bottom 1px solid #BCBCB7
+          :margin-bottom 15px
+          :padding-bottom 8px
+          :text-indent 15px
+          :width 100%
+          :clear both
+          
+        .box
+          :width 100%
+          :background #FFF
+          :overflow hidden
+          :margin-bottom 12px
+          
+          &.yellow
+            h4
+              :color #FFF999
+          &.red
+            h4
+              :color #DB6969
+          p
+            :margin-left 10px
+            :margin-right 10px
+            :margin-bottom 10px
+            :line-height 1.3em
+            :font-size 1.1em
+          
+          h4
+            :background #3A4043
+            :padding 11px 10px 9px 10px
+            :font-weight bold
+            :text-transform uppercase
+            :margin 0
+            :color #FFF
+            +top_rounded
+          
+          .multi_select_popup
+            :z-index 999
+            
+          ul.toolbar
+            :height 32px
+            :overflow hidden
+            :margin-left 5px
+            :z-index 1999
+            li
+              :margin-top 5px
+              :float left
+              :height 25px
+              
+              &.filter
+                :margin-top 8px
+                :margin-right 5px
+                label
+                  :font-weight bold
+                  :float left
+                  :margin-right 5px
+                  :margin-top 4px
+                  
+                input
+                  :float left
+                  :margin-right 5px
+                
+                .multi_select
+                  :margin-top -2px
+                  :background-color #fff
+                  :float left
+                  :width 150px
+                  
+                  a
+                    :border 1px solid #EEE
+                    :display block
+                    :padding 3px
+                    :padding-top 5px
+                    :padding-left 5px
+                    :height 16px
+                    &:hover
+                      :text-decoration none
+                      :background-color #eee
+                  
+                  ul
+                    li
+                      :clear both
+              
+              &.separator
+                :width 15px
+              
+              &.button
+                :border solid 1px #eee
+                &:hover
+                  :background-color #eee
+                
+                a
+                  :height 25px
+                  :width 25px
+                  :display block
+                  :cursor pointer
+                  
+
+              &.count
+                float: right
+                margin-top: 10px
+                margin-right: 7px
+                
+

@@ -5,14 +5,20 @@
   display: block;
   clear: both;
   padding-top: 50px;
-  padding-left: 50px;
+  padding-left: 10px;
+
 
   tr.task_entities{
     td{
-      img{
-         height:20px;
-         with:20px;  
-      }        
+      min-width: 150px;
+      text-align:center;            
+    
+      &:nth-child(5){
+        img{ 
+          height:35;
+          width: 30px;
+        }
+      }
     }
   }
   

@@ -14,7 +14,6 @@
         %th
           Status
         %th
-        %th
     
       - @user.tasks.each do |t|
         %tr.task_entities
@@ -22,6 +21,7 @@
           %td=t.description
           %td= normal_date t.completion_date
           %td=status_img(t.completion_state)
-          %td=image_tag "/assets/edit.png", :title=>"Edit task..."
-          %td=image_tag "/assets/delete.png", :title=>"Delete task..."
+          %td
+            =image_tag "/assets/edit.png", :title=>"Edit task..."
+            =image_tag "/assets/delete.png", :title=>"Delete task..."
             
