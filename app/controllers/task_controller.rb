@@ -1,16 +1,35 @@
 class TaskController < ApplicationController
   def index
     throw "There are no users in your Mongo database - please run rake db:seed" if User.all.length==0
-    @user = User.all.first
+    @user = User.first
   end
 
   def new
-    @task = Task.new
+    add_edit
+  end
+
+  def edit  
+    @task = User.first.tasks.find(params[:id])
+    render :action => :new
+  end
+
+  def update
+     
+     task = User.first.tasks.find(params[:id])
+     task.update_attributes(params[:task])
+     task.save
+     excluded = User.first.tasks.select{|t| t if t.id.to_s!= params[:id] }
+     User.first.tasks = excluded
+     User.first.tasks << task          
+     User.first.save
+
+     @user = User.first     
+     render :action => :index
   end
 
   def create
     @task = Task.new params[:task]
-    @user = User.all.first
+    @user = User.first
     
     if @task.valid?
       @user.tasks.push @task
@@ -21,8 +40,17 @@ class TaskController < ApplicationController
   end
 
   def delete
-     @task = Task.find( params[:task])
-     throw @task
-     @user = User.all.first
+     puts "There are #{User.last.tasks.length}"
+     tasks = User.first.tasks.select{|t| t if t.id.to_s!= params[:id] }
+     User.last.tasks = tasks     
+     User.last.save
+     puts "There are #{User.last.tasks.length}"
+     @user = User.first
+     render :action => :index
+  end
+
+  private 
+  def add_edit
+    @task = Task.new
   end
 end

@@ -14,14 +14,14 @@
         %th
           Status
         %th
-    
+
       - @user.tasks.each do |t|
         %tr.task_entities
           %td=t.name
           %td=t.description
           %td= normal_date t.completion_date
-          %td=status_img(t.completion_state)
+          %td= status_img(t.completion_state, t.completion_date)
           %td
-            =image_tag "/assets/edit.png", :title=>"Edit task..."
+            =link_to image_tag("/assets/edit.png"), edit_task_path(t)
             =link_to image_tag("/assets/delete.png"), delete_task_path(t)
             

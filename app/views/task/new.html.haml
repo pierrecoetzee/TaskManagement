@@ -1,8 +1,9 @@
+- current_action = @task.new_record? ? "Create" : "Update"
 #main_content  
   .top_content
     #task_form
-      %h2 Create a new task here
-      = form_for @task, :url => create_task_path do |f|
+      %h2 #{current_action} a task here 
+      = form_for @task, :url => @task.new_record? ? create_task_path : update_task_path(@task.id) do |f|
         -if @task.errors.any?
           %p.errors
             There are errors on the following fields, please correct them :
@@ -19,4 +20,4 @@
             =f.text_field :completion_date, :class => "datepicker"
           %li
             .primary_button
-              %button{:type=>"submit"} Create task  
+              %button{:type=>"submit"} #{current_action} task  

@@ -1,4 +1,5 @@
 class User
+  
   include Mongoid::Document
   field :user_name , type: String
   
@@ -12,6 +13,6 @@ class User
     end
   end
 
-
+  accepts_nested_attributes_for :task
 end
 
