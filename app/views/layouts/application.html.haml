@@ -5,21 +5,16 @@
     %title= "Task Management"
     %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     
+    = javascript_include_tag "application"
     = stylesheet_link_tag "application"  
     = stylesheet_link_tag "ui-darkness/jquery-ui-1.8.10.custom.css"
-    = javascript_include_tag "jquery"
-    = javascript_include_tag "jquery-ui"
-    = javascript_include_tag "application"
+    /= javascript_include_tag "jquery"
+    /= javascript_include_tag "jquery-ui"
+   
     = javascript_include_tag "http://www.google.com/jsapi"   
 
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
-  
-    = csrf_meta_tag
-    :coffeescript
-      $('.datepicker').datepicker({dateFormat: 'dd/mm/yy'});
-
-
+    = csrf_meta_tag 
+      
   %body
     #abslogo
     #abslogo1
@@ -37,4 +32,9 @@
          
       #content
         =yield
+
+
+  :javascript
+    var $j = jQuery.noConflict();
+    $j(document).ready(  function(){ $j('.datepicker').datepicker(); } )
       

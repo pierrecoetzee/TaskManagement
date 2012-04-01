@@ -5,7 +5,8 @@
       = form_for @task, :url => create_task_path do |f|
         -if @task.errors.any?
           %p.errors
-            =@task.error.messages.keys
+            There are errors on the following fields, please correct them :
+            =@task.errors.messages.keys.select{|e| e }.flatten.join(',')
         %ul
           %li
             =f.label :name

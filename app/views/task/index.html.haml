@@ -23,5 +23,5 @@
           %td=status_img(t.completion_state)
           %td
             =image_tag "/assets/edit.png", :title=>"Edit task..."
-            =image_tag "/assets/delete.png", :title=>"Delete task..."
+            =link_to image_tag("/assets/delete.png"), delete_task_path(t)
             

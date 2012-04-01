@@ -15,12 +15,14 @@ class TaskController < ApplicationController
     if @task.valid?
       @user.tasks.push @task
       @user.save
-      redirect_to :action => :index
-    else
-      return redirect_to :action => :new
+      return redirect_to :action => :index 
     end
+    render :action => :new
   end
 
-  def destroy
+  def delete
+     @task = Task.find( params[:task])
+     throw @task
+     @user = User.all.first
   end
 end
