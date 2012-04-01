@@ -17,15 +17,22 @@ gem 'json'
 gem 'execjs'
 gem 'therubyracer'
 gem 'mongo_mapper'
+gem 'barista'
 
 gem 'capybara'
 gem 'headless'
+gem 'minitest'
 
 group :test do
   gem 'turn', :require => false
   gem 'launchy'
   gem 'rack-test'
 end
+
+gem 'rspec-rails' , :group =>[:development,:test]
+gem 'database_cleaner' ,:group => :test
+gem 'factory_girl_rails' ,:group => :test
+gem 'mongoid-rspec' ,:group => :test
 
 # Gems used only for assets and not required
 # in production environments by default.

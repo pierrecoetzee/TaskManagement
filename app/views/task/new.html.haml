@@ -1,0 +1,21 @@
+#main_content  
+  .top_content
+    #task_form
+      %h2 Create a new task here
+      = form_for @task, :url => create_task_path do |f|
+        -if @task.errors.any?
+          %p.errors
+            =@task.error.messages.keys
+        %ul
+          %li
+            =f.label :name
+            =f.text_field :name
+          %li
+            =f.label :description
+            =f.text_field :description
+          %li
+            =f.label :completion_date
+            =f.text_field :completion_date, :class => "datepicker"
+          %li
+            .primary_button
+              %button{:type=>"submit"} Create task  

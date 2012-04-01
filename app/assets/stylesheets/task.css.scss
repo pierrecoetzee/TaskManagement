@@ -21,5 +21,73 @@
       }
     }
   }
-  
+}
+
+#task_form {
+  h2 {
+    font-size: 1.8em;
+    font-family: proxima-nova-extra-condensed,"Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    color: black;
+    margin: 10px 0;
+  }
+ 
+  p.errors {
+    background-color: #ffebd3;
+    background-image: url("/assets/error-triangle.jpg");
+    background-repeat: no-repeat;
+    color: #de6400;
+    line-height: 2.5em; 
+    padding-left: 40px;
+    background-position: 5px;
+  }
+ 
+  .primary_button {
+    button {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+ 
+  ul {
+    list-style-type: none;
+    margin-bottom: 10px;
+   
+    li {
+      margin: 10px 0;
+      font-size: 1.1em;
+     
+      label {
+        display: block;
+        padding: 5px 0;
+      }
+      input {
+        display: inline-block;
+        width: 275px;
+      }
+     
+      &.submit {
+        overflow: hidden;
+        zoom: 1;
+       
+        small {
+          display: block;
+          width: 500px;
+          font-size: 0.8em;
+          float: right;
+          text-align: right;
+          color: #555;
+          padding-right: 10px;
+          label {
+            display: inline-block;
+          }
+          input {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
 }
