@@ -9,5 +9,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+
     = render :partial => "shared/header"
-    =content_for?(:content) ? yield(:content) : yield        
+    = content_for?(:content) ? yield(:content) : yield        

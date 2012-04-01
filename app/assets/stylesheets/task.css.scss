@@ -1,0 +1,19 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.task_list{
+  display: block;
+  clear: both;
+  padding-top: 50px;
+  padding-left: 50px;
+
+  tr.task_entities{
+    td{
+      img{
+         height:20px;
+         with:20px;  
+      }        
+    }
+  }
+  
+}

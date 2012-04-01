@@ -1,0 +1,27 @@
+.task_list
+  %div
+    These are all the tasks for this user!
+
+  %div
+    %table
+      %tr
+        %th
+          Task Name
+        %th        
+          Description
+        %th
+          Completion date
+        %th
+          Status
+        %th
+        %th
+    
+      - @user.tasks.each do |t|
+        %tr.task_entities
+          %td=t.name
+          %td=t.description
+          %td= normal_date t.completion_date
+          %td=status_img(t.completion_state)
+          %td=image_tag "/assets/edit.png", :title=>"Edit task..."
+          %td=image_tag "/assets/delete.png", :title=>"Delete task..."
+            

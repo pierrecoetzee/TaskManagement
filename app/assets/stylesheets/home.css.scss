@@ -1,3 +1,34 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color:#FFF;
+}
+
+.main_menu{
+    ul{
+        list-style-type: none;
+        background-color:red;
+        margin: 10px 0px 20px 10px;
+        
+        li{
+           padding-right:25px; 
+           float:left;
+           a{
+             &:hover{
+               cursor:hand;
+               color:#000;
+               background-color:#f2f2f2;
+             }
+           }
+        }
+    }
+}
+
+
+.task_header{
+  margin: 0px 0px 0px 0px;
+  
+  div{
+    background-color:black;
+    color:#FFF;
+  }
+
+}

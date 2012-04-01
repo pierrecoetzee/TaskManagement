@@ -1,0 +1,5 @@
+.main_menu
+  %ul
+    - menu_options.each do |m|
+      %li
+        = link_to m, task_list_path
